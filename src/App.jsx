@@ -26,11 +26,11 @@ function Text1() {
 function Cake(){
   const ref=useRef(null);
   useFrame(()=>(ref.current.rotation.y += 0.01))
-  const gltf=useLoader(GLTFLoader,'../public/models/cake_3d/scene.gltf')
+  const gltf=useLoader(GLTFLoader,'/models/cake_3d/scene.gltf')
   return <primitive object={gltf.scene} scale={0.3} ref={ref} position-y={-1} />
 }
 function Confetti(){
-  const gltf=useLoader(GLTFLoader, '../public/models/confetti/scene.gltf')
+  const gltf=useLoader(GLTFLoader, '/models/confetti/scene.gltf')
   let mixer
     if (gltf.animations.length) {
         mixer = new THREE.AnimationMixer(gltf.scene);
@@ -79,7 +79,7 @@ function App() {
 >
 <AudioPlayer
         autoPlay
-        src="../public/tainhacchuong.net_anne-marie-birthday.mp3"
+        src="/tainhacchuong.net_anne-marie-birthday.mp3"
         loop
         onPlay={() => console.log("onPlay")}
       />
